@@ -15,7 +15,6 @@ class StreetlightsNeuroWeb:
         # random weights init
         weights_0_1 = 2*np.random.random((3,hidden_size)) - 1
         weights_1_2 = 2*np.random.random((hidden_size,1)) - 1
-        iteration = 0
         # fit this model
         for iteration in range(count_iterations):
             layer_2_error = 0
