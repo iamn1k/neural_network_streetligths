@@ -1,5 +1,7 @@
-# neural_network_streetligths           ◯•
+# neural_network_streetligths           
 # The streetlight problem
+• -> light on  
+◯ -> light off  
 This toy problem considers how a network learns entire datasets
 Consider yourself approaching a street corner in a foreign country. 
 As you approach, you look up and realize that the street light is unfamiliar. 
