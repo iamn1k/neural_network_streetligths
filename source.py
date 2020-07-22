@@ -15,7 +15,6 @@ class StreetlightsNeuroWeb:
         # random weights init
         weights_0_1 = 2*np.random.random((3,hidden_size)) - 1
         weights_1_2 = 2*np.random.random((hidden_size,1)) - 1
-        iteration = 0
         # fit this model
         for iteration in range(count_iterations):
             layer_2_error = 0
@@ -47,10 +46,13 @@ class StreetlightsNeuroWeb:
                 print("Iteration:"+ str(iteration),end='\n')
     def predict_light(self,input):
         import numpy as np
-        layer_0 = np.array(input)
-        layer_1 = np.dot(layer_0,weights_0_1)
-        layer_2 = np.dot(layer_1,weights_1_2)
-        return True if layer_2[0] >= 1 else False
+        try:
+            layer_0 = np.array(input)
+            layer_1 = np.dot(layer_0,weights_0_1)
+            layer_2 = np.dot(layer_1,weights_1_2)
+            return True if layer_2[0] >= 1 else False
+        except NameError:
+            raise NameError('Perhaps you have not trained the neural network, to do this, call the fit() method')
 
 
 
