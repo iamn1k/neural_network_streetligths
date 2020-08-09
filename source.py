@@ -46,7 +46,6 @@ class StreetlightsNeuroWeb:
                 print("Iteration:"+ str(iteration),end='\n')
     def predict_light(self,input):
         import numpy as np
-<<<<<<< HEAD
         try:
             layer_0 = np.array(input)
             layer_1 = np.dot(layer_0,weights_0_1)
@@ -54,12 +53,8 @@ class StreetlightsNeuroWeb:
             return True if layer_2[0] >= 1 else False
         except NameError:
             raise NameError('Perhaps you have not trained the neural network, to do this, call the fit() method')
-=======
-        layer_0 = np.array(input)
-        layer_1 = np.dot(layer_0,weights_0_1)
-        layer_2 = np.dot(layer_1,weights_1_2)
-        return True if layer_2[0] >= 1 else False
->>>>>>> 9844698a4c3c74df7ea7ffe080368194a55c141d
+        
+
 
 
 
