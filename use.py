@@ -14,8 +14,5 @@ print(model.predict_light([0,1,1]))# True
 print(model.predict_light([1,0,0]))# False
 print(model.predict_light([1,0,1]))# True
 print(model.predict_light([1,1,0]))# False
-<<<<<<< HEAD
 print(model.predict_light([1,1,1]))# True
-=======
-print(model.predict_light([1,1,1]))# True
->>>>>>> 9844698a4c3c74df7ea7ffe080368194a55c141d
+

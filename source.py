@@ -5,7 +5,7 @@ class StreetlightsNeuroWeb:
     def __relu(self,x):
         return (x > 0) * x 
     def __relu2deriv(self,output):
-        return output>0
+        return output>0  
     def fit(self,count_iterations,div_print=9,alpha=0.2,hidden_size=8):
         import numpy as np
 
@@ -46,39 +46,9 @@ class StreetlightsNeuroWeb:
                 print("Iteration:"+ str(iteration),end='\n')
     def predict_light(self,input):
         import numpy as np
-<<<<<<< HEAD
-        try:
-            layer_0 = np.array(input)
-            layer_1 = np.dot(layer_0,weights_0_1)
-            layer_2 = np.dot(layer_1,weights_1_2)
-            return True if layer_2[0] >= 1 else False
-        except NameError:
-            raise NameError('Perhaps you have not trained the neural network, to do this, call the fit() method')
-=======
+        import math
         layer_0 = np.array(input)
         layer_1 = np.dot(layer_0,weights_0_1)
         layer_2 = np.dot(layer_1,weights_1_2)
-        return True if layer_2[0] >= 1 else False
->>>>>>> 9844698a4c3c74df7ea7ffe080368194a55c141d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return True if 1 / (1 + math.exp(-layer_2)) > 0.59 else False
+        
