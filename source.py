@@ -6,9 +6,11 @@ class StreetlightsNeuroWeb:
         return (x > 0) * x 
     def __relu2deriv(self,output):
         return output>0  
+    def __sigmoid(self,x):
+        import math
+        return 1 / (1 + math.exp(x))
     def fit(self,count_iterations,div_print=9,alpha=0.2,hidden_size=8):
         import numpy as np
-
         np.random.seed(5)
         global weights_0_1
         global weights_1_2
@@ -51,7 +53,7 @@ class StreetlightsNeuroWeb:
             layer_0 = np.array(input)
             layer_1 = np.dot(layer_0,weights_0_1)
             layer_2 = np.dot(layer_1,weights_1_2)
-            return True if 1 / (1 + math.exp(-layer_2)) > 0.59 else False
+            return True if self.__sigmoid(layer_2) > 0.59 else False
         except NameError:
             raise NameError('Perhaps you have not trained the neural network, to do this, call the fit() method')
         
